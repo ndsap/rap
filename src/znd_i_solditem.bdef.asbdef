@@ -1,0 +1,51 @@
+managed implementation in class zbp_nd_i_solditem unique;
+strict;
+with draft;
+
+define behavior for ZND_I_SoldItem alias SoldItem
+persistent table znd_t_sold_item
+draft table znd_t_sold_itm_d
+lock master total etag LastChangedAt
+authorization master ( global )
+//etag master <field_name>
+{
+
+  field ( mandatory ) RetailerID, SKU;
+  field ( readonly  ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy;
+  field ( readonly ) Theme;
+
+  determination setTheme on save { field SKU; create; }
+
+  validation validateRetailerID on save { field RetailerID; create; }
+  validation validateSKU on save { field SKU; create; }
+
+  // Post data to SAP
+  action Post result [0..*] $self;
+
+  create;
+  update;
+  delete;
+
+  mapping for znd_t_sold_item
+  {
+    RetailerID = retailer_id;
+    SKU = sku;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at; }
+
+  // Draft section
+
+  draft action Resume;
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+
+  draft determine action Prepare
+  {
+    validation validateRetailerID;
+    validation validateSKU;
+  }
+
+}

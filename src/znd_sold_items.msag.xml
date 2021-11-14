@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZND_SOLD_ITEMS</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Messages for Sold Items</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZND_SOLD_ITEMS</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Stok-keeping Unit &amp;1 doesn&apos;t exist</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZND_SOLD_ITEMS</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Retailer &amp;1 doesn&apos;t exist</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZND_SOLD_ITEMS</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Items successfuly posted</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

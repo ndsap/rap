@@ -1,0 +1,8 @@
+@EndUserText.label: 'Sold Items'
+define service ZND_SD_SoldItem {
+  expose ZND_C_SoldItem as SoldItem;
+  expose ZND_I_Retailer as Retailer;
+  expose ZND_C_Product as ProductCard;
+  expose ZND_I_Product as Product;
+  expose ZND_I_ProductTheme as ProductTheme;
+}
